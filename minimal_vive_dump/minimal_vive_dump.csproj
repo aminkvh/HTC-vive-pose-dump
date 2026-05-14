@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>vive-pose-dump</AssemblyName>
+    <RootNamespace>VivePoseDump</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Amin K. and contributors</Authors>
+    <Company>Amin K.</Company>
+    <Description>Minimal OpenVR pose dumper for HTC Vive and tracked devices.</Description>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <UseAppHost>true</UseAppHost>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\headers\openvr_api.cs" Link="openvr_api.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\bin\win64\openvr_api.dll" Link="openvr_api.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Include="README.md">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Include="..\LICENSE" Link="LICENSE">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>
